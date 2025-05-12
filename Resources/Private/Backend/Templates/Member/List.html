@@ -1,23 +1,26 @@
 <f:layout name="Default" />
 
-<f:section name="Content">
-    <h1>Members</h1>
-    <f:link.action action="new">Add New Member</f:link.action>
+<f:section name="main">
+    <h1>Lista članova</h1>
     <table>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Zvanje</th>
+            <th>Akcije</th>
         </tr>
         <f:for each="{members}" as="member">
             <tr>
-                <td>{member.name}</td>
-                <td>{member.email}</td>
+                <td>{member.firstName}</td>
+                <td>{member.lastName}</td>
+                <td>{member.position}</td>
                 <td>
-                    <f:link.action action="edit" arguments="{member: member}">Edit</f:link.action>
-                    <f:link.action action="delete" arguments="{member: member}" onclick="return confirm('Are you sure?')">Delete</f:link.action>
+                    <f:link.action action="edit" arguments="{member: member}">Izmeni</f:link.action> |
+                    <f:link.action action="delete" arguments="{member: member}">Obriši</f:link.action>
                 </td>
             </tr>
         </f:for>
     </table>
+
+    <f:link.action action="new">➕ Novi član</f:link.action>
 </f:section>

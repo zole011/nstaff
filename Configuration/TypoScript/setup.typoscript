@@ -8,6 +8,7 @@ plugin.tx_staff {
         layoutRootPaths.1 = {$plugin.tx_staff.view.layoutRootPath}
     }
     persistence {
-      storagePid = {$plugin.tx_staff.persistence.storagePid}
+      #storagePid = {$plugin.tx_staff.persistence.storagePid}
+      storagePid = 15
     }
 }

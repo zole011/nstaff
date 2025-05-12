@@ -1,13 +1,40 @@
 <f:layout name="Default" />
+<f:section name="main">
 
-<f:section name="Content">
-    <h1>Add New Member</h1>
-    <f:form action="create" object="{newMember}">
-        <label for="name">Name:</label>
-        <f:form.textfield property="name" id="name" /><br />
-        <label for="email">Email:</label>
-        <f:form.textfield property="email" id="email" /><br />
-        <!-- Add other fields as needed -->
-        <f:form.submit value="Save" />
+    <h1>Dodaj novog člana</h1>
+
+    <f:form action="create" name="newMember" object="{newMember}">
+        <div>
+            <label>Ime</label><br>
+            <f:form.textfield property="firstName" required="true" />
+        </div>
+        <div>
+            <label>Prezime</label><br>
+            <f:form.textfield property="lastName" required="true" />
+        </div>
+        <div>
+            <label>Zvanje</label><br>
+            <f:form.textfield property="position" />
+        </div>
+        <div>
+            <label>Email</label><br>
+            <f:form.textfield property="email" />
+        </div>
+        <div>
+            <label>Telefon</label><br>
+            <f:form.textfield property="phone" />
+        </div>
+        <div>
+            <label>Adresa</label><br>
+            <f:form.textfield property="address" />
+        </div>
+
+        <br>
+        <f:form.submit value="Sačuvaj" />
     </f:form>
+
+    <br>
+    <f:link.action action="list">⟵ Nazad na listu</f:link.action>
+
 </f:section>
+
