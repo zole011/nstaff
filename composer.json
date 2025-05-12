@@ -1,0 +1,27 @@
+{
+    "name": "gmbit/staff",
+    "type": "typo3-cms-extension",
+    "description": "Plugin for managing staff members",
+    "homepage": "https://github.com/yourusername/gmbit_staff",
+    "license": "GPL-2.0-or-later",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your.email@example.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gmbit\\Staff\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "gmbit_staff"
+        }
+    }
+}

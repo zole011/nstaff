@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext">
+        <header>
+            <creation-tool>poedit</creation-tool>
+            <creation-tool-version>1.5.5</creation-tool-version>
+            <creation-date>2023-10-01T12:00:00Z</creation-date>
+            <last-change-date>2023-10-01T12:00:00Z</last-change-date>
+            <generator>poedit 1.5.5</generator>
+        </header>
+        <body>
+            <trans-unit id="tx_gmbitstaff_domain_model_member">
+                <source>Member</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.first_name">
+                <source>First Name</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.last_name">
+                <source>Last Name</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_gmbitstaff_domain_model_member.address">
+                <source>Address</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

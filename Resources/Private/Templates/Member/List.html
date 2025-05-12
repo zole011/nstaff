@@ -1,0 +1,8 @@
+<h1>Member List</h1>
+<ul>
+    <f:for each="{members}" as="member">
+        <li>
+            <f:link.action action="show" arguments="{member: member}">{member.firstName} {member.lastName}</f:link.action>
+        </li>
+    </f:for>
+</ul>
