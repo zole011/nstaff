@@ -10,7 +10,7 @@ return [
         'labels' => 'LLL:EXT:staff/Resources/Private/Language/locallang_mod.xlf',
         'extensionName' => 'Staff',
         'controllerActions' => [
-            \Vendor\Staff\Controller\MemberController::class => [
+            \Gmbit\Staff\Controller\MemberController::class => [
                 'list', 'new', 'create', 'edit', 'update', 'delete'
             ],
         ],

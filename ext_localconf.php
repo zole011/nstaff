@@ -1,12 +1,11 @@
 <?php
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'Gmbit.Staff',
-    'Memberlist',
+    'Staff',
     [
-        'Member' => 'list, show'
+        \Gmbit\Staff\Controller\MemberController::class => 'list, show',
     ],
-    // Non-cacheable actions
     [
-        'Member' => ''
+        \Gmbit\Staff\Controller\MemberController::class => 'list, show',
     ]
 );

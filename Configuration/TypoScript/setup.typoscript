@@ -1,0 +1,10 @@
+plugin.tx_staff {
+    view {
+        templateRootPaths.0 = EXT:staff/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_staff.view.templateRootPath}
+        partialRootPaths.0 = EXT:staff/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_staff.view.partialRootPath}
+        layoutRootPaths.0 = EXT:staff/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_staff.view.layoutRootPath}
+    }
+}
