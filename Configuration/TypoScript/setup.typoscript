@@ -7,4 +7,7 @@ plugin.tx_staff {
         layoutRootPaths.0 = EXT:staff/Resources/Private/Layouts/
         layoutRootPaths.1 = {$plugin.tx_staff.view.layoutRootPath}
     }
+    persistence {
+      storagePid = {$plugin.tx_staff.persistence.storagePid}
+    }
 }
