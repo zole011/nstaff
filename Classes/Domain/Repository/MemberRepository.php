@@ -2,8 +2,8 @@
 namespace Gmbit\Staff\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class MemberRepository extends Repository
 {
@@ -19,8 +19,8 @@ class MemberRepository extends Repository
         $query = $this->createQuery();
         $query->matching(
             $query->logicalOr(
-                $query->like('firstName', '%' . $name . '%'),
-                $query->like('lastName', '%' . $name . '%')
+                $query->like('name', '%' . $name . '%'),
+                $query->like('surname', '%' . $name . '%')
             )
         );
         return $query->execute()->toArray();

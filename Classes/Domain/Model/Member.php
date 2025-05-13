@@ -5,31 +5,31 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Member extends AbstractEntity
 {
-    protected string $firstName = '';
-    protected string $lastName = '';
+    protected string $name = '';
+    protected string $surname = '';
     protected string $title = '';
     protected string $email = '';
     protected string $phone = '';
     protected string $address = '';
 
-    public function getFirstName(): string
+    public function getName(): string
     {
-        return $this->firstName;
+        return $this->name;
     }
 
-    public function setFirstName(string $firstName): void
+    public function setName(string $name): void
     {
-        $this->firstName = $firstName;
+        $this->name = $name;
     }
 
-    public function getLastName(): string
+    public function getSurname(): string
     {
-        return $this->lastName;
+        return $this->surname;
     }
 
-    public function setLastName(string $lastName): void
+    public function setSurname(string $surname): void
     {
-        $this->lastName = $lastName;
+        $this->surname = $surname;
     }
 
     public function getTitle(): string

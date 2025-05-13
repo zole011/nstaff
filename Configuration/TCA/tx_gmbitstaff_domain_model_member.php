@@ -1,8 +1,9 @@
 <?php
 return [
+    'rootLevel' => 0,
     'ctrl' => [
         'title' => 'LLL:EXT:gmbit_staff/Resources/Private/Language/locallang_db.xlf:tx_gmbitstaff_domain_model_member',
-        'label' => 'first_name',
+        'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -12,14 +13,14 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'first_name,last_name,title,email,phone,address',
+        'searchFields' => 'name,surname,title,email,phone,address',
         'iconfile' => 'EXT:gmbit_staff/Resources/Public/Icons/tx_gmbitstaff_domain_model_member.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, first_name, last_name, title, email, phone, address',
+        'showRecordFieldList' => 'hidden, name, surname, title, email, phone, address',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, first_name, last_name, title, email, phone, address'],
+        '1' => ['showitem' => 'hidden, name, surname, title, email, phone, address'],
     ],
     'columns' => [
         'hidden' => [
@@ -29,7 +30,7 @@ return [
                 'type' => 'check',
             ],
         ],
-        'first_name' => [
+        'name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:gmbit_staff/Resources/Private/Language/locallang_db.xlf:tx_gmbitstaff_domain_model_member.first_name',
             'config' => [
@@ -38,7 +39,7 @@ return [
                 'eval' => 'trim,required'
             ],
         ],
-        'last_name' => [
+        'surname' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:gmbit_staff/Resources/Private/Language/locallang_db.xlf:tx_gmbitstaff_domain_model_member.last_name',
             'config' => [

@@ -1,7 +1,7 @@
 <f:layout name="Default" />
 
 <f:section name="Content">
-    <f:debug>{_all}</f:debug>
+
     <h1>Lista članova</h1>
     <table>
         <tr>
@@ -12,14 +12,15 @@
         </tr>
         <f:for each="{members}" as="member">
             <tr>
-                <td>{member.firstName}</td>
-                <td>{member.lastName}</td>
-                <td>{member.position}</td>
+                <td>{member.name}</td>
+                <td>{member.surname}</td>
+                <td>{member.title}</td>
                 <td>
                     <f:link.action action="edit" arguments="{member: member}">Izmeni</f:link.action> |
                     <f:link.action action="delete" arguments="{member: member}">Obriši</f:link.action>
                 </td>
             </tr>
+
         </f:for>
     </table>
 

@@ -12,10 +12,10 @@
             <trans-unit id="tx_gmbitstaff_domain_model_member">
                 <source>Member</source>
             </trans-unit>
-            <trans-unit id="tx_gmbitstaff_domain_model_member.first_name">
+            <trans-unit id="tx_gmbitstaff_domain_model_member.name">
                 <source>First Name</source>
             </trans-unit>
-            <trans-unit id="tx_gmbitstaff_domain_model_member.last_name">
+            <trans-unit id="tx_gmbitstaff_domain_model_member.surname">
                 <source>Last Name</source>
             </trans-unit>
             <trans-unit id="tx_gmbitstaff_domain_model_member.title">

@@ -13,9 +13,9 @@ class MemberController extends ActionController
 {
     protected MemberRepository $memberRepository;
 
-    public function injectMemberRepository(MemberRepository $memberRepository): void
+    public function __construct()
     {
-        $this->memberRepository = $memberRepository;
+        $this->memberRepository = GeneralUtility::makeInstance(MemberRepository::class);
     }
 
 protected function renderView(string $templateName, array $variables = []): ResponseInterface
@@ -49,22 +49,43 @@ protected function renderView(string $templateName, array $variables = []): Resp
     return new HtmlResponse($view->render());
 }
 
-    public function listAction(): ResponseInterface
-    {
-        $members = $this->memberRepository->findAll();
-        var_dump($members);
-        exit;
-        return $this->renderView('List', ['members' => $members]);
-    }
+public function listAction(): ResponseInterface
+{
+    $members = $this->memberRepository->findAll();
+    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($members);
+
+    // TEST: ručno iz baze
+    $connection = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)
+        ->getConnectionForTable('tx_gmbitstaff_domain_model_member');
+    $rows = $connection->select(
+        ['*'],
+        'tx_gmbitstaff_domain_model_member'
+    )->fetchAllAssociative();
+    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($rows);
+
+    return $this->renderView('List', ['members' => $members]);
+}
 
     public function newAction(): ResponseInterface
     {
         return $this->renderView('New', ['newMember' => new Member()]);
     }
 
-    public function createAction(Member $newMember): ResponseInterface
+    public function createAction(): ResponseInterface
     {
-        $this->memberRepository->add($newMember);
+        $data = $this->request->getParsedBody()['tx_gmbitstaff_backend_member']['newMember'] ?? [];
+
+        $member = new Member();
+        $member->setName($data['name'] ?? '');
+        $member->setSurname($data['surname'] ?? '');
+        $member->setTitle($data['title'] ?? '');
+        $member->setEmail($data['email'] ?? '');
+        $member->setPhone($data['phone'] ?? '');
+        $member->setAddress($data['address'] ?? '');
+        $member->_setProperty('pid', 15);
+
+        $this->memberRepository->add($member);
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager::class)->persistAll();
         $this->addFlashMessage('Član je uspešno dodat.');
         return $this->redirect('list');
     }
