@@ -7,7 +7,7 @@ return [
         'access' => 'user,group',
         'workspaces' => 'live',
         'path' => '/module/staff/member',
-        'labels' => 'LLL:EXT:staff/Resources/Private/Language/locallang_mod.xlf',
+        'labels' => 'LLL:EXT:gmbit_staff/Resources/Private/Language/locallang_mod.xlf:mod_title',
         'extensionName' => 'Staff',
         'controllerActions' => [
             \Gmbit\Staff\Controller\MemberController::class => [

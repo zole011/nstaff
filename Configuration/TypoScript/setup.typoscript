@@ -12,3 +12,4 @@ plugin.tx_staff {
       storagePid = 15
     }
 }
+plugin.tx_staff.persistence.storagePid = 15

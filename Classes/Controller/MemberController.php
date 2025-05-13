@@ -22,8 +22,9 @@ protected function renderView(string $templateName, array $variables = []): Resp
 {
     $view = GeneralUtility::makeInstance(StandaloneView::class);
 
+    // Postavljanje putanje do šablona
     $templatePath = GeneralUtility::getFileAbsFileName(
-        'EXT:staff/Resources/Private/Backend/Templates/Member/' . $templateName . '.html'
+        'EXT:gmbit_staff/Resources/Private/Backend/Templates/Member/' . $templateName . '.html'
     );
 
     if (!is_file($templatePath)) {
@@ -32,22 +33,27 @@ protected function renderView(string $templateName, array $variables = []): Resp
 
     $view->setTemplatePathAndFilename($templatePath);
     $view->setLayoutRootPaths([
-        GeneralUtility::getFileAbsFileName('EXT:staff/Resources/Private/Backend/Layouts/')
+        GeneralUtility::getFileAbsFileName('EXT:gmbit_staff/Resources/Private/Backend/Layouts/')
     ]);
     $view->setPartialRootPaths([
-        GeneralUtility::getFileAbsFileName('EXT:staff/Resources/Private/Backend/Partials/')
+        GeneralUtility::getFileAbsFileName('EXT:gmbit_staff/Resources/Private/Backend/Partials/')
     ]);
+
+    // Postavljanje Request objekta
+    $view->setRequest($this->request);
 
     foreach ($variables as $key => $value) {
         $view->assign($key, $value);
     }
-    var_dump($templatePath);
+
     return new HtmlResponse($view->render());
 }
 
     public function listAction(): ResponseInterface
     {
         $members = $this->memberRepository->findAll();
+        var_dump($members);
+        exit;
         return $this->renderView('List', ['members' => $members]);
     }
 
